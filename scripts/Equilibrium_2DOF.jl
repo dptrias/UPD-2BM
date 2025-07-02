@@ -1,4 +1,5 @@
 using GLMakie, JLD2
+include("..\\src\\StaticModels.jl")
 
 path = abspath(@__DIR__, "..")
 f_name = "Equilibrium_2DOF_test_storage"
@@ -149,6 +150,7 @@ if response == "Y" || response == "y"
     if isfile(f_path)
         println("[warning] File $f_path already exists. Choose a different name or delete the file")
     else
+        mkpath(joinpath(path, "data\\static"))
         @save f_path solutions pm
         println("[info] Results saved to $f_path")
     end

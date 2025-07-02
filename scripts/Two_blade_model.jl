@@ -121,6 +121,7 @@ f_name = file_name(model = "TBM", Δt = Δt, tf = tf, method = "rk4",
                    friction_type = friction_type(pm.friction_law_1), 
                    feq = nothing, 
                    freetext = "matlab_verification") * ".jld2"
+mkpath(joinpath(path, "data"))
 f_path = joinpath(path, "data", f_name)
 info = "Test to verify with Matlab with an intial displacement of 0.001 rad at psi_D. Elapsed time: $elapsed_time s."
 print("Save results? [Y/n]: ")

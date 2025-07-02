@@ -1,5 +1,5 @@
 using GLMakie, JLD2, MAT
-include("StaticModels.jl")
+include("..\\src\\StaticModels.jl")
 
 path = abspath(@__DIR__, "..")
 ## INITIALIZATION
@@ -82,7 +82,7 @@ begin
         verbose && println("[info] T₁ = $T₁, T₂ = $T₂ : Solution found")
 
         # Relative displacement of the contact points
-        xₜ₁, xn₁, xₜ₂, xn₂ = contact_points_displacements(eq_pos, pm)
+        xₜ₁, xₙ₁, xₜ₂, xₙ₂ = contact_points_displacements(eq_pos, pm)
 
         # Normal forces
         kₙ = pm.friction_law_1.kₙ
@@ -435,6 +435,7 @@ begin
         if isfile(f_path)
             println("[warning] File $f_path already exists. Choose a different name or delete the file")
         else
+            mkpath(joinpath(path, "data\\static"))
             @save f_path solutions pm
             println("[info] Results saved to $f_path")
         end
