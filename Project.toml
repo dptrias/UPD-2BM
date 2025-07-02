@@ -1,0 +1,12 @@
+[deps]
+Colors = "5ae59095-9a9b-59fe-a467-6f913c188581"
+FFTW = "7a1cc6ca-52ef-59f5-83cd-3a7055c09341"
+GLMakie = "e9467ef8-e4e7-5192-8a1a-b1aee30e663a"
+JLD2 = "033835bb-8acc-5ee8-8aae-3f567f8a3819"
+Julianim = "6f265d81-5dcd-4cff-aaf8-c20660aad74d"
+LaTeXStrings = "b964fa9f-0449-5b57-a5c2-d3ea65f4040f"
+MAT = "23992714-dd62-5051-b70f-ba57cb901cac"
+MathTeXEngine = "0a4f8689-d25c-4efe-a92b-7142dfc1aa53"
+NonlinearSolve = "8913a72c-1f9b-4ce2-8d82-65094dcecaec"
+Parameters = "d96e819e-fc66-5662-9728-84c9c7592b0a"
+QuadEig = "c91c7b58-0d0b-4d20-b830-a38cac847d15"
