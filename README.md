@@ -1,4 +1,4 @@
-# UPD-TBM
+# UPD-2BM
 
 This repository contains the code and scripts developed for the Bachelor's Thesis in Aerospace Engineering at the **Technical University of Madrid (UPM)**.
 
