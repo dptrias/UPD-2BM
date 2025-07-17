@@ -4,15 +4,7 @@ abstract type FrictionLaw end
 
 ## 1D FRICTION LAWS
 function friction_type(law::FrictionLaw)
-    if law isa Linear
-        return "linear"
-    elseif law isa Cubic
-        return "cubic"
-    elseif law isa Coulomb
-        return "coulomb"
-    else
-        return "unknown"
-    end
+    error("Friction law type not defined for $(law).")
 end
 
 # LINEAR FRICTION
@@ -25,6 +17,10 @@ Linear(; kₙ, kₜ) = Linear(kₙ, kₜ)
 
 g(xₜ, xₙ, law::Linear) = [law.kₜ * xₜ, law.kₙ * xₙ]
 
+function friction_type(::Linear)
+    return "linear"
+end
+
 # CUBIC FRICTION
 struct Cubic{T <: Real} <: FrictionLaw
     kₙ::T
@@ -34,6 +30,10 @@ end
 Cubic(; kₙ, kₜ) = Cubic(kₙ, kₜ) 
 
 g(xₜ, xₙ, law::Cubic) = [law.kₜ * xₜ^3, law.kₙ * xₙ^3]
+
+function friction_type(::Cubic)
+    return "cubic"
+end
 
 # COULOMB FRICTION
 mutable struct Coulomb{T <: Real} <: FrictionLaw
@@ -87,4 +87,8 @@ end
         wₜ = xₜ
         return zero(xₜ), wₜ
     end
+end
+
+function friction_type(::Coulomb)
+    return "coulomb"
 end
