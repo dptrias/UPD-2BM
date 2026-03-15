@@ -6,7 +6,7 @@ This repository contains the code and scripts developed for the Bachelor's Thesi
 
 The objective of the thesis was to analyse how different possible equilibrium configurations of **underplatform dampers (UPDs)** affect the vibrational response of **bladed-disks** during operation.
 
-A simplified model composed of **two blades and one UPD**—accounting for a total of **5 degrees of freedom (DOFs)**—was implemented for this purpose.
+A simplified model composed of **two blades and one UPD**, accounting for a total of 5 degrees of freedom, was implemented for this purpose.
 
 ## Contents
 
